@@ -98,17 +98,23 @@
 }
 .header__home {
   font-size: 4.2rem;
-  overflow-wrap: anywhere;
   font-family: "Roboto Condensed", sans-serif;
   color: var(--color-text);
   line-height: 80%;
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
   letter-spacing: -0.03em;
+  width: 23.1rem;
+  max-height: 3.6rem;
+  overflow: hidden;
+}
+.header__home > div {
+  min-width: 100%;
 }
 @media screen and (max-width: 600px) {
   .header__home {
-    max-width: 8.5rem;
+    width: 8.5rem;
+    max-height: 6rem;
     font-size: 3.2rem;
   }
 }
@@ -156,6 +162,7 @@
   border: 0.3rem solid var(--color-border);
   border-radius: 4rem;
   box-sizing: content-box;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   .header__light-mode__btn {
@@ -246,7 +253,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  min-height: 101%;
+  min-height: 100%;
   border-left: 0.12rem solid var(--color-border-light);
   border-right: 0.12rem solid var(--color-border-light);
   padding: 1.5rem;
@@ -289,8 +296,6 @@
   }
 }
 .footer__link > svg {
-  height: 2.4rem;
-  width: 2.4rem;
   fill: var(--color-text);
 }
 

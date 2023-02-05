@@ -9,12 +9,19 @@ const Footer = () => {
       Created by Jeffrey Leung{" "}
       <span>&copy;copyright {new Date().getFullYear()}</span>
       <nav className="footer__links">
-        <Link className="footer__link" to="https://github.com/jef1993">
+        <Link
+          className="footer__link"
+          to="https://github.com/jef1993"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GithubIcon />
         </Link>
         <Link
           className="footer__link"
           to="https://www.linkedin.com/in/jef1993/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <LinkedInIcon />
         </Link>

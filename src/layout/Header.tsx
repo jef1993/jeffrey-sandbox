@@ -10,14 +10,45 @@ const Header = (props: HeaderProps) => {
   const { pathname } = useLocation();
   const mainPath = pathname.split("/")[1] || "basic";
 
+  const homeTransition = {
+    type: "spring",
+    stiffness: 10,
+    y: { duration: 0.3 },
+  };
+
+  const homeAnimate = {
+    rest: {
+      y: 0,
+      scale: [1, 0.85, 1],
+    },
+    hover: {
+      y: "-100%",
+      scale: [1, 0.85, 1],
+    },
+  };
+
   const thumbAnimate = {
     x: props.theme === "dark" ? 21 : 2,
   };
 
+  const menuHoverAnimate = {
+    height: [30, 42],
+    width: [30, 42],
+    rotate: [0, 180],
+    borderRadius: ["20%", "50%"],
+  };
+
   return (
     <header className="header">
-      <Link to="/" className="header__home">
-        Framer Motion
+      <Link to="/" className="header__link">
+        <motion.div className="header__home" whileHover="hover" animate="rest">
+          <motion.div variants={homeAnimate} transition={homeTransition}>
+            Framer Motion
+          </motion.div>
+          <motion.div variants={homeAnimate} transition={homeTransition}>
+            Framer Motion
+          </motion.div>
+        </motion.div>
       </Link>
       <div className="header__divider"></div>
       <div className="header__content">
@@ -37,9 +68,13 @@ const Header = (props: HeaderProps) => {
         </div>
       </div>
 
-      <button className="header__menu">
+      <motion.button
+        className="header__menu"
+        whileHover={menuHoverAnimate}
+        whileTap={{ scale: 0.9 }}
+      >
         <div className="header__menu__line"></div>
-      </button>
+      </motion.button>
     </header>
   );
 };
