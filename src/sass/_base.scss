@@ -1,0 +1,43 @@
+@use "./abstracts" as *;
+
+:where(*, *::before, *::after) {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  border-color: var(--color-border);
+  border-width: 0.1rem;
+  transition: color 0.2s ease, fill 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+:where(html) {
+  font-size: 62.5%;
+  font-family: $font-text;
+}
+
+:where(body) {
+  font-size: 1.6rem;
+}
+
+:where(h2, h3, h4, h5, h6) {
+  @include headings();
+}
+
+:where(h1) {
+  font-size: 2rem;
+  line-height: 100%;
+  font-weight: 300;
+}
+
+:where(button) {
+  background-color: transparent;
+}
+
+:where(a) {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+:where(div, button) {
+  line-height: 100%;
+}

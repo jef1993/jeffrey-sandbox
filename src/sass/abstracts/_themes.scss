@@ -1,0 +1,23 @@
+:root {
+  --color-bg: rgb(240, 240, 240);
+  --color-text: rgb(30, 30, 30);
+  --color-primary: rgb(230, 178, 68);
+  --color-secondary: rgb(214, 140, 55);
+  --color-tertiary: rgb(192, 69, 38);
+  --color-border: rgb(30, 30, 30);
+  --color-border-light: rgb(212, 210, 205);
+  --color-success: rgb(11, 211, 71);
+  --color-error: rgb(218, 29, 16);
+}
+
+.theme-dark {
+  --color-bg: rgb(30, 30, 30);
+  --color-text: rgb(240, 240, 240);
+  --color-primary: rgb(230, 178, 68);
+  --color-secondary: rgb(214, 140, 55);
+  --color-tertiary: rgb(192, 69, 38);
+  --color-border: rgb(240, 240, 240);
+  --color-border-light: rgb(54, 53, 52);
+  --color-success: rgb(11, 211, 71);
+  --color-error: rgb(218, 29, 16);
+}
