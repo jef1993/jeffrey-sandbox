@@ -29,8 +29,14 @@
   font-weight: 300;
 }
 
+:where(h2) {
+  font-size: 3.2rem;
+  text-transform: capitalize;
+}
+
 :where(button) {
   background-color: transparent;
+  cursor: pointer;
 }
 
 :where(a) {

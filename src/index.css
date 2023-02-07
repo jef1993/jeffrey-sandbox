@@ -55,8 +55,14 @@
   font-weight: 300;
 }
 
+:where(h2) {
+  font-size: 3.2rem;
+  text-transform: capitalize;
+}
+
 :where(button) {
   background-color: transparent;
+  cursor: pointer;
 }
 
 :where(a) {
@@ -149,6 +155,9 @@
 .header__light-mode {
   font-weight: 600;
   align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 @media screen and (max-width: 600px) {
   .header__light-mode {
@@ -157,66 +166,37 @@
 }
 .header__light-mode__btn {
   margin-left: 0.6rem;
-  height: 1.8rem;
+  height: 2.2rem;
   aspect-ratio: 2/1;
   border: 0.3rem solid var(--color-border);
   border-radius: 4rem;
-  box-sizing: content-box;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.2rem;
+  box-sizing: border-box;
+}
+.header__light-mode__btn[data-theme=dark] {
+  justify-content: flex-end;
 }
 @media screen and (max-width: 600px) {
   .header__light-mode__btn {
     transform: scale(0.8);
-    margin-left: 0.2rem;
   }
 }
 .header__light-mode__thumb {
-  height: calc(100% - 0.5rem);
+  height: 100%;
   aspect-ratio: 1/1;
   border-radius: 1rem;
   background-color: var(--color-border);
   cursor: pointer;
-}
-.header__menu {
-  height: 3.4rem;
-  aspect-ratio: 1/1;
-  border-radius: 0.5rem;
-  border: 0.3rem solid var(--color-border);
-  margin-left: 1rem;
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (max-width: 600px) {
-  .header__menu {
-    margin-left: 0.6rem;
-  }
-}
-.header__menu__line {
-  height: 0.3rem;
-  width: 65%;
-  background-color: var(--color-border);
-  border-radius: 1rem;
-  position: relative;
-}
-.header__menu__line::after, .header__menu__line::before {
-  position: absolute;
-  height: 0.3rem;
-  width: 100%;
-  border-radius: inherit;
-  content: "";
-  background-color: var(--color-border);
-  top: 0.6rem;
-  left: 0;
-}
-.header__menu__line::before {
-  top: -0.6rem;
 }
 
 .main {
   flex: 1 1 0;
   margin-left: 2.5rem;
+  position: relative;
   overflow-y: auto;
   position: relative;
   scrollbar-gutter: stable;
@@ -249,7 +229,7 @@
   border: 0.4rem solid var(--color-bg);
   background-clip: content-box;
 }
-.main > section {
+.main__content {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
@@ -297,6 +277,85 @@
 }
 .footer__link > svg {
   fill: var(--color-text);
+}
+
+.menu {
+  position: absolute;
+  z-index: 20;
+  height: 100%;
+  width: min(100%, 24rem);
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+  top: 0;
+  right: -2.5rem;
+  padding: 1.5rem;
+  border-left: 0.12rem solid var(--color-border-light);
+  border-right: 0.12rem solid var(--color-border-light);
+}
+@media screen and (max-width: 600px) {
+  .menu {
+    right: -1.5rem;
+  }
+}
+.menu__list {
+  margin-top: 2.5rem;
+  list-style: none;
+}
+.menu__item:not(:first-child) {
+  margin-top: 0.7rem;
+}
+.menu__link {
+  font-size: 2rem;
+}
+
+.menu-btn {
+  height: 3.6rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  border: 0.3rem solid var(--color-border);
+  margin-left: 1rem;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .menu-btn {
+    margin-left: 0.6rem;
+  }
+}
+.menu-btn__line {
+  height: 0.25rem;
+  width: 65%;
+  background-color: var(--color-border);
+  border-radius: 1rem;
+  position: relative;
+}
+.menu-btn__line::after, .menu-btn__line::before {
+  position: absolute;
+  height: 0.25rem;
+  width: 100%;
+  border-radius: inherit;
+  content: "";
+  background-color: var(--color-border);
+  top: 0.6rem;
+  left: 0;
+  transform-origin: center;
+  transition: all 0.15s ease-in-out;
+}
+.menu-btn__line::before {
+  top: -0.6rem;
+}
+.menu-btn__line[data-opened=true] {
+  background-color: transparent;
+}
+.menu-btn__line[data-opened=true]::before {
+  top: 0;
+  transform: rotate(-45deg) scale(0.8);
+}
+.menu-btn__line[data-opened=true]::after {
+  top: 0;
+  transform: rotate(45deg) scale(0.8);
 }
 
 /*# sourceMappingURL=index.css.map */

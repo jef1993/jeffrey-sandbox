@@ -1,0 +1,53 @@
+@use "../../../sass/abstracts" as *;
+
+.menu-btn {
+  height: 3.6rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  border: 0.3rem solid var(--color-border);
+  margin-left: 1rem;
+  align-self: center;
+  @include flexCenter();
+  @media screen and (max-width: 600px) {
+    margin-left: 0.6rem;
+  }
+
+  &__line {
+    height: 0.25rem;
+    width: 65%;
+    background-color: var(--color-border);
+    border-radius: 1rem;
+    position: relative;
+
+    &::after,
+    &::before {
+      position: absolute;
+      height: 0.25rem;
+      width: 100%;
+      border-radius: inherit;
+      content: "";
+      background-color: var(--color-border);
+      top: 0.6rem;
+      left: 0;
+      transform-origin: center;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &::before {
+      top: -0.6rem;
+    }
+
+    &[data-opened="true"] {
+      &::before {
+        top: 0;
+        transform: rotate(-45deg) scale(0.8);
+      }
+
+      background-color: transparent;
+      &::after {
+        top: 0;
+        transform: rotate(45deg) scale(0.8);
+      }
+    }
+  }
+}

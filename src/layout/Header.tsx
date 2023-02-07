@@ -1,12 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
+import MenuBtn from "../components/buttons/MenuBtn/MenuBtn";
 
 interface HeaderProps {
   theme: string;
   setTheme: () => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: () => void;
 }
 
-const Header = (props: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({
+  theme,
+  setTheme,
+  isMenuOpen,
+  setIsMenuOpen,
+}) => {
   const { pathname } = useLocation();
   const mainPath = pathname.split("/")[1] || "basic";
 
@@ -27,15 +35,10 @@ const Header = (props: HeaderProps) => {
     },
   };
 
-  const thumbAnimate = {
-    x: props.theme === "dark" ? 21 : 2,
-  };
-
-  const menuHoverAnimate = {
-    height: [30, 42],
-    width: [30, 42],
-    rotate: [0, 180],
-    borderRadius: ["20%", "50%"],
+  const spring = {
+    type: "spring",
+    stiffness: 800,
+    damping: 25,
   };
 
   return (
@@ -54,27 +57,22 @@ const Header = (props: HeaderProps) => {
       <div className="header__content">
         <h1 className="header__name">{mainPath}</h1>
         <div className="header__light-mode">
-          {props.theme}
+          {theme}
           <button
             className="header__light-mode__btn"
             type="button"
-            onClick={props.setTheme}
+            onClick={setTheme}
+            data-theme={theme}
           >
             <motion.div
               className="header__light-mode__thumb"
-              animate={thumbAnimate}
+              layout="position"
+              transition={spring}
             ></motion.div>
           </button>
         </div>
       </div>
-
-      <motion.button
-        className="header__menu"
-        whileHover={menuHoverAnimate}
-        whileTap={{ scale: 0.9 }}
-      >
-        <div className="header__menu__line"></div>
-      </motion.button>
+      <MenuBtn isOpened={isMenuOpen} onClick={setIsMenuOpen} />
     </header>
   );
 };

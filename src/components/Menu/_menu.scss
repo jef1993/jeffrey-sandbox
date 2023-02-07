@@ -1,0 +1,37 @@
+@use "../../sass/abstracts" as *;
+
+.menu {
+  position: absolute;
+  z-index: 20;
+  height: 100%;
+  width: min(100%, 24rem);
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+  top: 0;
+  right: -$layout-gap;
+  padding: 1.5rem;
+  border-left: $border;
+  border-right: $border;
+
+  @media screen and (max-width: 600px) {
+    right: -$layout-gap-mb;
+  }
+
+  &__title {
+  }
+
+  &__list {
+    margin-top: 2.5rem;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 0.7rem;
+    }
+  }
+
+  &__link {
+    font-size: 2rem;
+  }
+}

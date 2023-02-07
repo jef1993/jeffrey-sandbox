@@ -1,2 +1,5 @@
 @use "./sass/base";
 @use "./sass/layout";
+
+@use "./components/Menu/menu";
+@use "./components/buttons/MenuBtn/menuBtn";
