@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 
 interface Props {
   isMenuOpen: boolean;
+  setIsMenuOpen: (boolean: boolean) => void;
 }
 
-const Menu: React.FC<Props> = ({ isMenuOpen }) => {
-  const pageNames = ["basics", "name 2", "name 3"];
+const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const pageNames = ["basics", "Inputs", "name 3"];
 
   const menuStyle = {
     open: {
@@ -38,6 +39,7 @@ const Menu: React.FC<Props> = ({ isMenuOpen }) => {
             <Link
               className="menu__link"
               to={`/${i === 0 ? "" : name.replace(" ", "-")}`}
+              onClick={() => setIsMenuOpen(false)}
             >
               {name}
             </Link>

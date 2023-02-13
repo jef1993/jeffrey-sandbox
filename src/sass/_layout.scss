@@ -35,6 +35,7 @@
 
     & > div {
       min-width: 100%;
+      font-family: $font-heading;
     }
 
     @media screen and (max-width: 600px) {
@@ -118,6 +119,7 @@
   flex: 1 1 0;
   margin-left: $layout-gap;
   position: relative;
+  overflow-x: hidden;
   @media screen and (max-width: 600px) {
     margin-left: $layout-gap-mb;
   }
@@ -174,5 +176,11 @@
     & > svg {
       fill: var(--color-text);
     }
+  }
+}
+
+.section {
+  &__title {
+    margin-bottom: 2rem;
   }
 }

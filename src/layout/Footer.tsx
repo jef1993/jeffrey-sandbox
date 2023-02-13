@@ -1,4 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
 import { Link } from "react-router-dom";
 import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin.svg";
 import { ReactComponent as GithubIcon } from "../assets/icons/github.svg";

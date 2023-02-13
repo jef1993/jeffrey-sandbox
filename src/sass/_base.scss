@@ -3,8 +3,8 @@
 :where(*, *::before, *::after) {
   margin: 0;
   padding: 0;
-  color: var(--color-text);
   border-color: var(--color-border);
+  font-family: $font-text;
   border-width: 0.1rem;
   transition: color 0.2s ease, fill 0.2s ease, background-color 0.2s ease,
     border-color 0.2s ease;
@@ -17,16 +17,19 @@
 
 :where(body) {
   font-size: 1.6rem;
+  background-color: var(--color-bg);
 }
 
 :where(h2, h3, h4, h5, h6) {
   @include headings();
+  color: var(--color-text);
 }
 
 :where(h1) {
   font-size: 2rem;
   line-height: 100%;
   font-weight: 300;
+  color: var(--color-text);
 }
 
 :where(h2) {
@@ -37,6 +40,20 @@
 :where(button) {
   background-color: transparent;
   cursor: pointer;
+  border-style: solid;
+  font-size: 1.6rem;
+
+  &[type="submit"] {
+    height: 4rem;
+    align-self: flex-end;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    width: min(100%, 15rem);
+  }
+
+  &:disabled {
+    opacity: 0.2;
+  }
 }
 
 :where(a) {
@@ -46,4 +63,36 @@
 
 :where(div, button) {
   line-height: 100%;
+  color: var(--color-text);
+}
+
+:where(label) {
+  font-family: $font-heading;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-text);
+}
+
+:where(input) {
+  height: 4rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid var(--color-border-light);
+  outline: none;
+  border-radius: 0.5rem;
+  font-family: $font-text;
+  font-weight: 500;
+  box-sizing: border-box;
+  background-color: var(--color-input);
+  color: var(--color-text);
+
+  &:focus-visible,
+  &:focus {
+    border-color: var(--color-border);
+  }
+
+  &[aria-invalid="true"] {
+    border-color: var(--color-error);
+  }
 }

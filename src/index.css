@@ -8,6 +8,7 @@
   --color-border-light: rgb(212, 210, 205);
   --color-success: rgb(11, 211, 71);
   --color-error: rgb(218, 29, 16);
+  --color-input: rgb(240, 240, 240);
 }
 
 .theme-dark {
@@ -20,13 +21,14 @@
   --color-border-light: rgb(54, 53, 52);
   --color-success: rgb(11, 211, 71);
   --color-error: rgb(218, 29, 16);
+  --color-input: rgb(24, 24, 24);
 }
 
 :where(*, *::before, *::after) {
   margin: 0;
   padding: 0;
-  color: var(--color-text);
   border-color: var(--color-border);
+  font-family: "Jost", sans-serif;
   border-width: 0.1rem;
   transition: color 0.2s ease, fill 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -38,6 +40,7 @@
 
 :where(body) {
   font-size: 1.6rem;
+  background-color: var(--color-bg);
 }
 
 :where(h2, h3, h4, h5, h6) {
@@ -47,12 +50,14 @@
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
   letter-spacing: -0.03em;
+  color: var(--color-text);
 }
 
 :where(h1) {
   font-size: 2rem;
   line-height: 100%;
   font-weight: 300;
+  color: var(--color-text);
 }
 
 :where(h2) {
@@ -63,6 +68,18 @@
 :where(button) {
   background-color: transparent;
   cursor: pointer;
+  border-style: solid;
+  font-size: 1.6rem;
+}
+:where(button)[type=submit] {
+  height: 4rem;
+  align-self: flex-end;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  width: min(100%, 15rem);
+}
+:where(button):disabled {
+  opacity: 0.2;
 }
 
 :where(a) {
@@ -72,6 +89,35 @@
 
 :where(div, button) {
   line-height: 100%;
+  color: var(--color-text);
+}
+
+:where(label) {
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-text);
+}
+
+:where(input) {
+  height: 4rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid var(--color-border-light);
+  outline: none;
+  border-radius: 0.5rem;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  background-color: var(--color-input);
+  color: var(--color-text);
+}
+:where(input):focus-visible, :where(input):focus {
+  border-color: var(--color-border);
+}
+:where(input)[aria-invalid=true] {
+  border-color: var(--color-error);
 }
 
 .App {
@@ -116,6 +162,7 @@
 }
 .header__home > div {
   min-width: 100%;
+  font-family: "Roboto Condensed", sans-serif;
 }
 @media screen and (max-width: 600px) {
   .header__home {
@@ -197,6 +244,7 @@
   flex: 1 1 0;
   margin-left: 2.5rem;
   position: relative;
+  overflow-x: hidden;
   overflow-y: auto;
   position: relative;
   scrollbar-gutter: stable;
@@ -279,6 +327,10 @@
   fill: var(--color-text);
 }
 
+.section__title {
+  margin-bottom: 2rem;
+}
+
 .menu {
   position: absolute;
   z-index: 20;
@@ -356,6 +408,43 @@
 .menu-btn__line[data-opened=true]::after {
   top: 0;
   transform: rotate(45deg) scale(0.8);
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  gap: 0.8rem;
+  flex: 1;
+}
+.input__error {
+  color: var(--color-error);
+  text-align: right;
+}
+.input__field {
+  grid-column: 1/-1;
+  position: relative;
+}
+.input__field__input {
+  width: 100%;
+}
+.input__field__show {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border: none;
+  fill: rgba(var(--color-bg), 0.5);
+}
+.input__field__show > img {
+  transform: scale(0.8);
+}
+
+.inputs {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */
