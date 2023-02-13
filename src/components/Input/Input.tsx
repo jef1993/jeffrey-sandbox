@@ -10,6 +10,7 @@ interface InputProps {
   value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   errorText?: string;
+  hasPasswordRestriction?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -18,11 +19,12 @@ const Input: React.FC<InputProps> = ({
   onChange = () => {},
   type = "text",
   errorText = "",
+  hasPasswordRestriction = false,
 }) => {
   const [isTouched, setIsTouched] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const focusHandler = () => {
+  const blurHandler = () => {
     if (!isTouched) setIsTouched(true);
   };
 
@@ -36,7 +38,7 @@ const Input: React.FC<InputProps> = ({
         {name}
       </label>
       <div className="input__error">
-        <span className="input__error__text">{errorText}</span>
+        <span className="input__error__text">{isTouched && errorText}</span>
       </div>
       <div className="input__field">
         <input
@@ -45,9 +47,9 @@ const Input: React.FC<InputProps> = ({
           value={value}
           onChange={onChange}
           type={type === "password" ? (showPassword ? "text" : type) : type}
-          onFocus={focusHandler}
+          onBlur={blurHandler}
           placeholder="please enter"
-          aria-invalid={errorText ? "true" : "false"}
+          aria-invalid={isTouched && errorText ? "true" : "false"}
         ></input>
         {type === "password" && (
           <button

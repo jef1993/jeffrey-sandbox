@@ -4,7 +4,7 @@ import Section from "../../components/Section/Section";
 import Input from "../../components/Input/Input";
 import useInput from "../../components/Input/useInput";
 
-const initialUser = "user";
+const initialUser = "";
 const initialPassword = "mypassword";
 
 const Inputs: React.FC = () => {
