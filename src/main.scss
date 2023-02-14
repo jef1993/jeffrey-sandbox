@@ -1,8 +1,10 @@
 @use "./sass/base";
 @use "./sass/layout";
 
+@use "./components/Section/section";
 @use "./components/Menu/menu";
 @use "./components/buttons/MenuBtn/menuBtn";
 @use "./components/Input/input";
 
+@use "./pages/Home/home";
 @use "./pages/Inputs/inputs";

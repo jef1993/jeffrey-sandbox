@@ -1,0 +1,12 @@
+@use "../../sass/abstracts" as *;
+
+.home-boxes {
+  height: 200px;
+  width: 50%;
+  margin: 0 auto;
+  &__box {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+  }
+}

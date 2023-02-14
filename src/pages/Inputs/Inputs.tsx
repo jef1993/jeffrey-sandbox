@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Section from "../../components/Section/Section";
 import Input from "../../components/Input/Input";
 import useInput from "../../components/Input/useInput";
+import { motion } from "framer-motion";
+import { pageAnimate } from "../fmConfig";
 
 const initialUser = "";
 const initialPassword = "mypassword";
@@ -10,6 +13,7 @@ const initialPassword = "mypassword";
 const Inputs: React.FC = () => {
   const username = useInput(initialUser, "text", true);
   const password = useInput(initialPassword, "password", true);
+  const { pathname } = useLocation();
 
   const inputsHasError = !!username.errorText || !!password.errorText;
 
@@ -19,7 +23,14 @@ const Inputs: React.FC = () => {
   };
 
   return (
-    <div className="main__content">
+    <motion.div
+      className="main__content"
+      variants={pageAnimate}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.5 }}
+    >
       <Section title="Inputs">
         <form className="inputs" onSubmit={submitHandler}>
           <Input name="username" {...username} />
@@ -29,7 +40,7 @@ const Inputs: React.FC = () => {
           </button>
         </form>
       </Section>
-    </div>
+    </motion.div>
   );
 };
 

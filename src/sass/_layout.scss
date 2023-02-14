@@ -131,7 +131,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    overflow-x: hidden;
     min-height: 100%;
     border-left: $border;
     border-right: $border;

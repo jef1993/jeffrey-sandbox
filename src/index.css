@@ -280,7 +280,7 @@
 .main__content {
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow-x: hidden;
   min-height: 100%;
   border-left: 0.12rem solid var(--color-border-light);
   border-right: 0.12rem solid var(--color-border-light);
@@ -329,6 +329,15 @@
 
 .section__title {
   margin-bottom: 2rem;
+}
+
+.section button {
+  padding: 1rem;
+}
+.section__ctn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .menu {
@@ -439,6 +448,17 @@
 }
 .input__field__show > img {
   transform: scale(0.8);
+}
+
+.home-boxes {
+  height: 200px;
+  width: 50%;
+  margin: 0 auto;
+}
+.home-boxes__box {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .inputs {

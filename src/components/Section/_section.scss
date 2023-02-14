@@ -1,0 +1,13 @@
+@use "../../sass/abstracts" as *;
+
+.section {
+  & button {
+    padding: 1rem;
+  }
+
+  &__ctn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
