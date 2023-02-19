@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import Keyframes from "../../sections/Keyframes";
 import SwitchBoxes from "../../sections/SwitchBoxes";
 import BounceBall from "../../sections/BounceBall";
+import TabSelect from "../../sections/TabSelect";
 
 const Home: React.FC = () => {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
       <Keyframes />
       <SwitchBoxes />
       <BounceBall />
+      <TabSelect />
     </motion.div>
   );
 };

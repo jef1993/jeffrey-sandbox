@@ -44,11 +44,6 @@
     border-radius: 0.5rem;
     outline: 0.2rem solid var(--color-border);
     outline-offset: 0.2rem;
-    // background-image: linear-gradient(
-    //   to right,
-    //   var(--color-border),
-    //   var(--color-border)
-    // );
     background-size: 0% 100%;
     color: var(--color-text);
     text-align: center;
@@ -63,5 +58,56 @@
       left: calc(100% + 1.2rem);
       top: 0;
     }
+  }
+}
+
+.tab-select {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  border: 0.2rem solid var(--color-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  &__nav {
+  }
+
+  &__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-weight: 700;
+  }
+
+  &__item {
+    flex: 1;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+
+    &:nth-child(3) {
+      flex: 2;
+    }
+
+    &[aria-selected="true"] {
+      color: var(--color-bg);
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    inset: 0.2rem;
+    background-color: var(--color-text);
+    border-radius: 0.8rem;
+    z-index: -1;
+  }
+
+  &__ctn {
+    font-size: 6.4rem;
+    font-weight: 600;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

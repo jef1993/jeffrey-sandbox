@@ -276,6 +276,16 @@
   border: 0.4rem solid var(--color-bg);
   background-clip: content-box;
 }
+.main__progress {
+  position: sticky;
+  height: 0.8rem;
+  z-index: 3;
+  background-color: var(--color-border);
+  top: 0;
+  left: 0;
+  right: 0;
+  transform-origin: 0%;
+}
 .main__content {
   display: flex;
   flex-direction: column;
@@ -512,6 +522,49 @@
   position: absolute;
   left: calc(100% + 1.2rem);
   top: 0;
+}
+
+.tab-select {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  border: 0.2rem solid var(--color-border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.tab-select__list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-weight: 700;
+}
+.tab-select__item {
+  flex: 1;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+.tab-select__item:nth-child(3) {
+  flex: 2;
+}
+.tab-select__item[aria-selected=true] {
+  color: var(--color-bg);
+}
+.tab-select__thumb {
+  position: absolute;
+  inset: 0.2rem;
+  background-color: var(--color-text);
+  border-radius: 0.8rem;
+  z-index: -1;
+}
+.tab-select__ctn {
+  font-size: 6.4rem;
+  font-weight: 600;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=index.css.map */

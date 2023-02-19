@@ -127,6 +127,17 @@
   position: relative;
   @include scrollbar();
 
+  &__progress {
+    position: sticky;
+    height: 0.8rem;
+    z-index: 3;
+    background-color: var(--color-border);
+    top: 0;
+    left: 0;
+    right: 0;
+    transform-origin: 0%;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
