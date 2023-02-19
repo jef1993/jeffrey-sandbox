@@ -1,0 +1,67 @@
+@use "../sass/abstracts" as *;
+
+.home-boxes {
+  height: 200px;
+  width: 50%;
+  margin: 0 auto;
+  &__box {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.keyframes {
+  &__box {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    border-style: solid;
+    box-sizing: border-box;
+  }
+}
+
+.bounce-ball {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__ball {
+    height: 14rem;
+    width: 14rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    transform-origin: left center;
+    cursor: pointer;
+    filter: blur(0px) grayscale(50%);
+  }
+
+  &__meter {
+    height: 2rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+    outline: 0.2rem solid var(--color-border);
+    outline-offset: 0.2rem;
+    // background-image: linear-gradient(
+    //   to right,
+    //   var(--color-border),
+    //   var(--color-border)
+    // );
+    background-size: 0% 100%;
+    color: var(--color-text);
+    text-align: center;
+    line-height: 130%;
+    font-weight: 600;
+    position: relative;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+
+    & span {
+      position: absolute;
+      left: calc(100% + 1.2rem);
+      top: 0;
+    }
+  }
+}

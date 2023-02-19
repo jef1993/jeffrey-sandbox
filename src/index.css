@@ -156,7 +156,6 @@
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
   letter-spacing: -0.03em;
-  width: 23.1rem;
   max-height: 3.6rem;
   overflow: hidden;
 }
@@ -166,7 +165,7 @@
 }
 @media screen and (max-width: 600px) {
   .header__home {
-    width: 8.5rem;
+    max-width: 10.6rem;
     max-height: 6rem;
     font-size: 3.2rem;
   }
@@ -331,6 +330,9 @@
   margin-bottom: 2rem;
 }
 
+.section {
+  margin-bottom: 3rem;
+}
 .section button {
   padding: 1rem;
 }
@@ -450,6 +452,12 @@
   transform: scale(0.8);
 }
 
+.inputs {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;
@@ -461,10 +469,49 @@
   overflow: hidden;
 }
 
-.inputs {
-  display: flex;
-  gap: 2rem;
+.keyframes__box {
+  width: 20rem;
+  height: 20rem;
+  margin: 0 auto;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.bounce-ball {
   width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bounce-ball__ball {
+  height: 14rem;
+  width: 14rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  transform-origin: left center;
+  cursor: pointer;
+  filter: blur(0px) grayscale(50%);
+}
+.bounce-ball__meter {
+  height: 2rem;
+  width: 15rem;
+  border-radius: 0.5rem;
+  outline: 0.2rem solid var(--color-border);
+  outline-offset: 0.2rem;
+  background-size: 0% 100%;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 130%;
+  font-weight: 600;
+  position: relative;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+.bounce-ball__meter span {
+  position: absolute;
+  left: calc(100% + 1.2rem);
+  top: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

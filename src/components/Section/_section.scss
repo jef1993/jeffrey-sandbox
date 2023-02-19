@@ -1,6 +1,7 @@
 @use "../../sass/abstracts" as *;
 
 .section {
+  margin-bottom: 3rem;
   & button {
     padding: 1rem;
   }

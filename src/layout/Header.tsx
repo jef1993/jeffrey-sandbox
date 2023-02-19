@@ -46,10 +46,10 @@ const Header: React.FC<HeaderProps> = ({
       <Link to="/" className="header__link">
         <motion.div className="header__home" whileHover="hover" animate="rest">
           <motion.div variants={homeAnimate} transition={homeTransition}>
-            Framer Motion
+            Code Sandbox
           </motion.div>
           <motion.div variants={homeAnimate} transition={homeTransition}>
-            Framer Motion
+            Code Sandbox
           </motion.div>
         </motion.div>
       </Link>

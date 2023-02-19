@@ -29,7 +29,7 @@ const MenuBtn: React.FC<Prop> = ({ isOpened, onClick }) => {
     <motion.button
       className="menu-btn"
       whileHover={menuOpen}
-      //   whileTap={{ scale: 0.95 }}
+      whileTap={{ scale: 1.15 }}
       style={isOpened ? menuOpen : menuClose}
       onClick={onClick}
     >
