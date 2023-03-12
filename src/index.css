@@ -243,47 +243,16 @@
   flex: 1 1 0;
   margin-left: 2.5rem;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  scrollbar-gutter: stable;
-}
-@media screen and (max-width: 600px) {
-  .main {
-    margin-left: 1.5rem;
-  }
-}
-.main::-webkit-scrollbar {
-  width: 2.5rem;
-  height: 100%;
-  background-clip: padding-box;
-  border-radius: 50px;
-}
-@media screen and (max-width: 600px) {
-  .main::-webkit-scrollbar {
-    width: 1.5rem;
-  }
-}
-.main::-webkit-scrollbar-thumb {
-  background: var(--color-bg);
-  border: 0.55rem solid transparent;
-  border-radius: 0.9rem;
-  background-clip: padding-box;
-}
-.main::-webkit-scrollbar-track {
-  background-color: var(--color-border-light);
-  border-radius: 0.8rem;
-  border: 0.4rem solid var(--color-bg);
-  background-clip: content-box;
+  overflow: hidden;
 }
 .main__progress {
-  position: sticky;
+  position: fixed;
   height: 0.8rem;
   z-index: 3;
   background-color: var(--color-border);
-  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   transform-origin: 0%;
 }
 .main__content {
@@ -295,6 +264,34 @@
   border-right: 0.12rem solid var(--color-border-light);
   padding: 1.5rem;
   box-sizing: border-box;
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+.main__content::-webkit-scrollbar {
+  width: 2.5rem;
+  height: 100%;
+  background-clip: padding-box;
+  border-radius: 50px;
+}
+@media screen and (max-width: 600px) {
+  .main__content::-webkit-scrollbar {
+    width: 1.5rem;
+  }
+}
+.main__content::-webkit-scrollbar-thumb {
+  background: var(--color-bg);
+  border: 0.55rem solid transparent;
+  border-radius: 0.9rem;
+  background-clip: padding-box;
+}
+.main__content::-webkit-scrollbar-track {
+  background-color: var(--color-border-light);
+  border-radius: 0.8rem;
+  border: 0.4rem solid var(--color-bg);
+  background-clip: content-box;
 }
 
 .footer {
@@ -353,14 +350,14 @@
 }
 
 .menu {
-  position: absolute;
+  position: sticky;
   z-index: 20;
   height: 100%;
   width: min(100%, 24rem);
   box-sizing: border-box;
   background-color: var(--color-bg);
   top: 0;
-  right: -2.5rem;
+  float: right;
   padding: 1.5rem;
   border-left: 0.12rem solid var(--color-border-light);
   border-right: 0.12rem solid var(--color-border-light);
@@ -466,6 +463,20 @@
   display: flex;
   gap: 2rem;
   width: 100%;
+}
+
+.fetch {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.fetch__btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.fetch__btn {
+  padding: 1rem;
 }
 
 .home-boxes {

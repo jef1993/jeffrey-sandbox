@@ -1,5 +1,5 @@
 interface SectionProps {
-  children?: JSX.Element;
+  children?: React.ReactNode;
   title?: string;
 }
 

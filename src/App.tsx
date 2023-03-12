@@ -7,10 +7,14 @@ import Menu from "./components/Menu/Menu";
 import Home from "./pages/Home/Home";
 import Footer from "./layout/Footer";
 import Inputs from "./pages/Inputs/Inputs";
+import Fetch from "./pages/Fetch/Fetch";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+import { Confirm } from "notiflix";
 
 function App() {
   const [theme, setTheme] = useState("light");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLeaving, setIsLeaving] = useState(false);
   const location = useLocation();
   const mainRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: mainRef });
@@ -21,8 +25,25 @@ function App() {
   });
 
   useEffect(() => {
-    console.log(scrollYProgress);
-  }, [scrollYProgress]);
+    Notify.init({
+      fontSize: "20px",
+      fontFamily: "Roboto Condensed",
+      borderRadius: "100rem",
+      cssAnimationStyle: "zoom",
+      cssAnimationDuration: 300,
+      fontAwesomeIconSize: "80px",
+      success: {
+        background: "rgb(11, 211, 71)",
+        notiflixIconColor: "white",
+        fontAwesomeClassName: "fas fa-check-double",
+        backOverlayColor: "black",
+      },
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(scrollYProgress);
+  // }, [scrollYProgress]);
 
   const themeHandler = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -48,6 +69,7 @@ function App() {
           <Routes key={location.pathname} location={location}>
             <Route element={<Home />} path="/" />
             <Route element={<Inputs />} path="inputs" />
+            <Route element={<Fetch />} path="fetch" />
           </Routes>
         </AnimatePresence>
       </main>

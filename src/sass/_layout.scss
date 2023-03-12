@@ -118,23 +118,16 @@
   flex: 1 1 0;
   margin-left: $layout-gap;
   position: relative;
-  overflow-x: hidden;
-  @media screen and (max-width: 600px) {
-    margin-left: $layout-gap-mb;
-  }
-
-  overflow-y: auto;
-  position: relative;
-  @include scrollbar();
+  overflow: hidden;
 
   &__progress {
-    position: sticky;
+    position: fixed;
     height: 0.8rem;
     z-index: 3;
     background-color: var(--color-border);
-    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     transform-origin: 0%;
   }
 
@@ -147,6 +140,11 @@
     border-right: $border;
     padding: 1.5rem;
     box-sizing: border-box;
+    margin: 0;
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    @include scrollbar();
   }
 }
 

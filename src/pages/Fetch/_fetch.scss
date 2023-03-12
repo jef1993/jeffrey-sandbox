@@ -1,0 +1,13 @@
+.fetch {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  &__btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  &__btn {
+    padding: 1rem;
+  }
+}
