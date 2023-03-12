@@ -56,6 +56,13 @@ const Fetch: React.FC = () => {
     name.resend();
   };
 
+  const clearHandler = async () => {
+    setPeopleID(1);
+    setTimeout(() => {
+      name.resetData();
+    }, 25);
+  };
+
   useEffect(() => {
     console.log(name.data);
   }, [name.data]);
@@ -87,9 +94,12 @@ const Fetch: React.FC = () => {
         <DataDisplayer {...name}>
           <h2 className="fetch__axios">{name.data?.name || ""}</h2>
         </DataDisplayer>
-
         <div className="fetch__btns">
-          <button className="fetch__btn" onClick={prevCharHandler}>
+          <button
+            className="fetch__btn"
+            onClick={prevCharHandler}
+            disabled={peopleID === 1}
+          >
             Previous Character
           </button>
           <button className="fetch__btn" onClick={nextCharHandler}>
@@ -98,7 +108,7 @@ const Fetch: React.FC = () => {
           <button className="fetch__btn" onClick={reloadCharHandler}>
             ReLoad
           </button>
-          <button className="fetch__btn" onClick={name.resetData}>
+          <button className="fetch__btn" onClick={clearHandler}>
             Clear Data
           </button>
         </div>

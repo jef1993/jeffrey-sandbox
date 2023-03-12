@@ -26,6 +26,9 @@
       aspect-ratio: 1/1;
       border: none;
       fill: rgba(var(--color-bg), 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       & > img {
         transform: scale(0.8);

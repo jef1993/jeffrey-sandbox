@@ -10,4 +10,13 @@
   &__btn {
     padding: 1rem;
   }
+
+  &__error {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  &__axios {
+  }
 }

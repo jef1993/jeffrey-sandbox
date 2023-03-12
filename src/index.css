@@ -454,6 +454,9 @@
   aspect-ratio: 1/1;
   border: none;
   fill: rgba(var(--color-bg), 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .input__field__show > img {
   transform: scale(0.8);
@@ -478,7 +481,11 @@
 .fetch__btn {
   padding: 1rem;
 }
-
+.fetch__error {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
 .home-boxes {
   height: 200px;
   width: 50%;

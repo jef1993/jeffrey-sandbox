@@ -23,10 +23,12 @@ const DataDisplayer: React.FC<DataDisplayerProps> = ({
     return <>{fetchingDisplay}</>;
   if (hasError)
     return (
-      <>
+      <div className="fetch__error">
         {errorDisplay}
-        <button onClick={resend}>resend</button>
-      </>
+        <button className="fetch__btn" onClick={resend}>
+          resend
+        </button>
+      </div>
     );
   return <div style={{ opacity: isFetching ? 0.7 : 1 }}>{children}</div>;
 };

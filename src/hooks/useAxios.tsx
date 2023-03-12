@@ -11,7 +11,6 @@ const useAxios = (
   const [isFetching, setIsFetching] = useState(false);
   const [hasError, setHasError] = useState(false);
   const hasNoData = isEqual({}, data);
-
   const resetData = setData.bind(null, {});
 
   const sendRequest = useCallback(async () => {
@@ -23,7 +22,6 @@ const useAxios = (
     } catch (error) {
       console.log(error);
       setHasError(true);
-
       Notify.failure("Something went wrong.");
     }
     setIsFetching(false);
@@ -32,8 +30,6 @@ const useAxios = (
   useEffect(() => {
     sendRequest();
   }, [...dependencies]);
-
-  console.log("error: ", hasError);
 
   return {
     data,
