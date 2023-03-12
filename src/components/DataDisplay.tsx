@@ -58,7 +58,7 @@ const resource = dataFetch();
 
 export const Name: React.FC = () => {
   const data = resource.user.read();
-  return <div>{data?.name || ""}</div>;
+  return <div></div>;
 };
 
 const DataDisplay: React.FC<DataDisplayProps> = ({

@@ -10,6 +10,7 @@ import Inputs from "./pages/Inputs/Inputs";
 import Fetch from "./pages/Fetch/Fetch";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Confirm } from "notiflix";
+import Notiflix from "./pages/Notiflix/Notiflix";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -70,6 +71,7 @@ function App() {
             <Route element={<Home />} path="/" />
             <Route element={<Inputs />} path="inputs" />
             <Route element={<Fetch />} path="fetch" />
+            <Route element={<Notiflix />} path="notiflix" />
           </Routes>
         </AnimatePresence>
       </main>

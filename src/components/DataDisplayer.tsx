@@ -1,9 +1,9 @@
 interface DataDisplayerProps {
   isFetching?: boolean;
   hasError?: boolean;
-  hasNoData?: boolean;
+  hasData?: boolean;
   resetData?: () => void;
-  resend?: any;
+  fetchData?: any;
   fetchingDisplay?: JSX.Element | string;
   errorDisplay?: JSX.Element | string;
   children?: React.ReactNode;
@@ -12,21 +12,21 @@ interface DataDisplayerProps {
 const DataDisplayer: React.FC<DataDisplayerProps> = ({
   isFetching = false,
   hasError = false,
-  hasNoData = true,
+  hasData = true,
   fetchingDisplay = "Loading...",
   errorDisplay = "Something went wrong",
   children = "",
   resetData = () => {},
-  resend,
+  fetchData,
 }) => {
-  if ((isFetching && hasNoData) || (isFetching && hasError))
+  if ((isFetching && !hasData) || (isFetching && hasError))
     return <>{fetchingDisplay}</>;
   if (hasError)
     return (
       <div className="fetch__error">
         {errorDisplay}
-        <button className="fetch__btn" onClick={resend}>
-          resend
+        <button className="fetch__btn" onClick={fetchData}>
+          fetchData
         </button>
       </div>
     );

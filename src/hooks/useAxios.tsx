@@ -1,43 +1,73 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { isEqual } from "lodash";
 import axios from "axios";
 
+export interface useAxiosOptions {
+  dependencies?: unknown[];
+  redirectTo?: string;
+  fetchOnLoad?: boolean;
+}
+
+interface InitialOptions {
+  dependencies: unknown[];
+  redirectTo: string;
+  fetchOnLoad: boolean;
+}
+
+const initialOptions: InitialOptions = {
+  dependencies: [],
+  redirectTo: "",
+  fetchOnLoad: true,
+};
+
 const useAxios = (
-  config: { [key: string]: unknown },
-  dependencies: string | number[] = []
+  config: { [key: string]: any },
+  options?: useAxiosOptions
 ) => {
+  const opts = { ...initialOptions, ...options };
   const [data, setData] = useState<{ [key: string]: any }>({});
   const [isFetching, setIsFetching] = useState(false);
+  const [enableFetch, setEnableFetch] = useState(opts.fetchOnLoad);
   const [hasError, setHasError] = useState(false);
-  const hasNoData = isEqual({}, data);
-  const resetData = setData.bind(null, {});
+  const navigate = useNavigate();
+  const hasData = !isEqual({}, data);
+  const resetData = () => {
+    setEnableFetch(false);
+    setData({});
+  };
 
-  const sendRequest = useCallback(async () => {
+  const fetchData = useCallback(async () => {
+    setEnableFetch(true);
     try {
       setIsFetching(true);
       const response = await axios(config);
       setData(response.data);
       if (hasError) setHasError(false);
+      if (opts.redirectTo) navigate(opts.redirectTo);
     } catch (error) {
       console.log(error);
       setHasError(true);
       Notify.failure("Something went wrong.");
     }
     setIsFetching(false);
-  }, [...dependencies]);
+  }, [...opts.dependencies]);
 
   useEffect(() => {
-    sendRequest();
-  }, [...dependencies]);
+    if (enableFetch) fetchData();
+    return () => {
+      if (!enableFetch) setEnableFetch(true);
+    };
+  }, [...opts.dependencies, enableFetch]);
 
   return {
     data,
-    resetData,
-    hasNoData,
+    hasData,
     isFetching,
     hasError,
-    resend: sendRequest,
+    fetchData,
+    resetData,
   };
 };
 
