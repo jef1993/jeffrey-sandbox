@@ -5,10 +5,11 @@ import { pageAnimate } from "../fmConfig";
 import Section from "../../components/Section/Section";
 import useAxios from "../../hooks/useAxios";
 import DataDisplayer from "../../components/DataDisplayer";
+import { AxiosRequestConfig } from "axios";
 
 const Fetch: React.FC = () => {
   const [peopleID, setPeopleID] = useState(1);
-  const axiosConfig = {
+  const axiosConfig: AxiosRequestConfig = {
     method: "get",
     url: `https://swapi.dev/api/people/${peopleID}/`,
   };

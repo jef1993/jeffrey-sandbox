@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { isEqual } from "lodash";
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export interface useAxiosOptions {
   dependencies?: unknown[];
@@ -22,10 +22,7 @@ const initialOptions: InitialOptions = {
   fetchOnLoad: true,
 };
 
-const useAxios = (
-  config: { [key: string]: any },
-  options?: useAxiosOptions
-) => {
+const useAxios = (config: AxiosRequestConfig, options?: useAxiosOptions) => {
   const opts = { ...initialOptions, ...options };
   const [data, setData] = useState<{ [key: string]: any }>({});
   const [isFetching, setIsFetching] = useState(false);
