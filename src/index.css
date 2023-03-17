@@ -271,7 +271,7 @@
   scrollbar-gutter: stable;
 }
 .main__content::-webkit-scrollbar {
-  width: 2.5rem;
+  width: 2.4rem;
   height: 100%;
   background-clip: padding-box;
   border-radius: 50px;
@@ -335,6 +335,14 @@
 
 .section__title {
   margin-bottom: 2rem;
+}
+
+.overlay {
+  z-index: 1000;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(3px) brightness(70%);
+  transform: translate3d(0, 0, 0);
 }
 
 .section {
@@ -486,6 +494,31 @@
   gap: 2rem;
   align-items: center;
 }
+.scrollbar {
+  height: 100%;
+  width: 100%;
+}
+.scrollbar .simplebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+.scrollbar .simplebar-track {
+  background-color: rgb(142, 136, 231);
+}
+.scrollbar .simplebar-track.simplebar-horizontal {
+  height: 2rem;
+}
+.scrollbar .simplebar-scrollbar::before {
+  background-color: rgb(59, 255, 85);
+}
+.scrollbar__content {
+  width: 200rem;
+  font-size: 4.8rem;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;

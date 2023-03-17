@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
-  const pageNames = ["basics", "Inputs", "fetch", "notiflix"];
+  const pageNames = ["basics", "Inputs", "fetch", "notiflix", "scrollbar"];
 
   const menuStyle = {
     open: {

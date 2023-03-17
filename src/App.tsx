@@ -11,6 +11,7 @@ import Fetch from "./pages/Fetch/Fetch";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Confirm } from "notiflix";
 import Notiflix from "./pages/Notiflix/Notiflix";
+import Scrollbar from "./pages/Scrollbar/Scrollbar";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <div className={`App theme-${theme}`}>
+      {/* <div className="overlay"></div> */}
       <Header
         theme={theme}
         setTheme={themeHandler}
@@ -72,6 +74,7 @@ function App() {
             <Route element={<Inputs />} path="inputs" />
             <Route element={<Fetch />} path="fetch" />
             <Route element={<Notiflix />} path="notiflix" />
+            <Route element={<Scrollbar />} path="scrollbar" />
           </Routes>
         </AnimatePresence>
       </main>
