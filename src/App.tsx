@@ -12,6 +12,7 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Confirm } from "notiflix";
 import Notiflix from "./pages/Notiflix/Notiflix";
 import Scrollbar from "./pages/Scrollbar/Scrollbar";
+import ReactQuery from "./pages/ReactQuery/ReactQuery";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -75,6 +76,7 @@ function App() {
             <Route element={<Fetch />} path="fetch" />
             <Route element={<Notiflix />} path="notiflix" />
             <Route element={<Scrollbar />} path="scrollbar" />
+            <Route element={<ReactQuery />} path="react-query" />
           </Routes>
         </AnimatePresence>
       </main>

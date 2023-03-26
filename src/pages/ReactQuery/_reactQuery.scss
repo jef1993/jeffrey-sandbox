@@ -1,0 +1,10 @@
+@use "../../sass/abstracts" as *;
+
+.react-query {
+  &__simplebar {
+  }
+  &__item {
+    padding: 2rem;
+    font-size: 3.6rem;
+  }
+}

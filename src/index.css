@@ -384,6 +384,7 @@
 }
 .menu__link {
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .menu-btn {
@@ -517,6 +518,11 @@
 .scrollbar__content {
   width: 200rem;
   font-size: 4.8rem;
+}
+
+.react-query__item {
+  padding: 2rem;
+  font-size: 3.6rem;
 }
 
 .home-boxes {
