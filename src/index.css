@@ -520,9 +520,28 @@
   font-size: 4.8rem;
 }
 
+.react-query {
+  display: flex;
+  flex-direction: column;
+}
 .react-query__item {
   padding: 2rem;
   font-size: 3.6rem;
+}
+.react-query__basic {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+.react-query__basic button {
+  width: 13rem;
+  height: 4rem;
+}
+.react-query__basic__data {
+  min-width: 50rem;
+  max-height: 25rem;
+  overflow-y: auto;
 }
 
 .home-boxes {
