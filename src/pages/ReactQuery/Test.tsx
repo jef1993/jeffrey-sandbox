@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import SimpleBar from "simplebar-react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
-const Overview: React.FC = () => {
+const Test: React.FC = () => {
   const [id, setId] = useState(1);
   const queryClient = useQueryClient();
   const { data, error, isLoading, isError } = useQuery({
@@ -32,7 +32,7 @@ const Overview: React.FC = () => {
   });
 
   if (isLoading) {
-    return <div className="react-query__basic">Loading...</div>;
+    return <div className="react-query__test">Loading...</div>;
   }
 
   console.log(data, error);
@@ -61,12 +61,12 @@ const Overview: React.FC = () => {
   };
 
   return (
-    <div className="react-query__basic">
+    <div className="react-query__test">
       <button className="btn" onClick={fetchMoreHandler}>
         {fetchMoreNames.isLoading ? "Fetching..." : "Fetch More"}
       </button>
       <SimpleBar
-        className="react-query__basic__data"
+        className="react-query__test__data"
         onScrollCapture={handleScroll}
       >
         <div>
@@ -81,4 +81,4 @@ const Overview: React.FC = () => {
   );
 };
 
-export default Overview;
+export default Test;
