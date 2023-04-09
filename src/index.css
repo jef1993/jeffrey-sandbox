@@ -471,6 +471,21 @@
   transform: scale(0.8);
 }
 
+.data-ctn {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.data-ctn__row {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+}
+.data-ctn__row > strong {
+  text-transform: capitalize;
+}
+
 .inputs {
   display: flex;
   gap: 2rem;
@@ -524,6 +539,9 @@
   display: flex;
   flex-direction: column;
 }
+.react-query button {
+  padding: 1rem 3rem;
+}
 .react-query__item {
   padding: 2rem;
   font-size: 3.6rem;
@@ -544,20 +562,38 @@
   overflow-y: auto;
 }
 
-.rq-basic {
-  padding: 2rem 0;
+.rq-basic__data-ctn {
   display: flex;
-  flex-direction: column;
+  gap: 2rem;
+}
+.rq-basic button {
+  padding: 1rem 3rem;
+}
+.rq-basic__btns {
+  display: flex;
   gap: 1rem;
 }
-.rq-basic__row {
+.mutation {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+}
+.mutation__form {
   width: 40rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
 }
-.rq-basic__row > strong {
-  text-transform: capitalize;
+.mutation__result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
+.mutation__result > p {
+  display: flex;
+  gap: 2rem;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;

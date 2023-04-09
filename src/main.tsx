@@ -7,6 +7,7 @@ import App from "./App";
 import "./index.css";
 
 const queryClient = new QueryClient();
+// queryClient.setQueryDefaults(["posts"], { initialData: [] });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <QueryClientProvider client={queryClient}>

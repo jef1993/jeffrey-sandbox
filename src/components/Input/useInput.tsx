@@ -14,6 +14,10 @@ const useInput = (
     setValue(e.target.value);
   };
 
+  const reset = () => {
+    setValue(initialValue);
+  };
+
   useEffect(() => {
     if (isRequired && `${value}`.trim() === "") {
       setErrorText("This field is required");
@@ -22,7 +26,7 @@ const useInput = (
     }
   }, [isRequired, value]);
 
-  return { value, onChange: changehandler, type, errorText };
+  return { value, onChange: changehandler, type, errorText, reset };
 };
 
 export default useInput;
