@@ -25,6 +25,7 @@ const Basic: React.FC = () => {
       retry: 2,
       staleTime: 1000 * 60 * 5,
       refetchOnWindowFocus: false,
+      keepPreviousData: true,
     });
 
   const planet = useQuery({
@@ -35,15 +36,16 @@ const Basic: React.FC = () => {
         url: data?.homeworld,
       }),
     enabled: !!data?.homeworld,
+    keepPreviousData: true,
   });
 
   const fetchNextHandler = () => {
     setPeopleId((prev) => prev + 1);
   };
 
-  useEffect(() => {
-    console.log(fetchStatus, status);
-  }, [fetchStatus, status]);
+  // useEffect(() => {
+  //   console.log(fetchStatus, status);
+  // }, [fetchStatus, status]);
 
   const fetchPrevHandler = () => {
     if (peopleId > 1) setPeopleId((prev) => prev - 1);
@@ -56,14 +58,7 @@ const Basic: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <motion.div
-      className="rq-basic"
-      variants={pageAnimate}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.5 }}
-    >
+    <div className="rq-basic">
       <div className="rq-basic__data-ctn">
         <DataCtn data={data} />
         {planet.data && <DataCtn data={planet.data} />}
@@ -75,7 +70,7 @@ const Basic: React.FC = () => {
         </button>
         <button onClick={fetchNextHandler}>Fetch Next</button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -120,6 +120,13 @@
   border-color: var(--color-error);
 }
 
+.ReactQueryDevtoolsPanel * {
+  color: rgb(211, 211, 211);
+}
+.ReactQueryDevtoolsPanel option {
+  color: black;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -481,6 +488,7 @@
   width: 40rem;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 .data-ctn__row > strong {
   text-transform: capitalize;
@@ -562,6 +570,9 @@
   overflow-y: auto;
 }
 
+.rq-basic--queries {
+  margin-top: 3rem;
+}
 .rq-basic__data-ctn {
   display: flex;
   gap: 2rem;
@@ -591,6 +602,36 @@
 }
 .mutation__result > p {
   display: flex;
+  gap: 2rem;
+}
+
+.infinity {
+  margin-top: 3rem;
+  width: 100%;
+}
+.infinity .data-ctn__row {
+  width: 50rem;
+}
+.infinity__list {
+  display: flex;
+  gap: 5rem;
+}
+.infinity__ctn {
+  height: 70rem;
+  width: 55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}
+.infinity__simplebar {
+  height: 70rem;
+  width: 55rem;
+}
+.infinity__simplebar .simplebar-content {
+  width: 55rem;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 

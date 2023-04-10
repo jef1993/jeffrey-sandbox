@@ -16,20 +16,13 @@ const Mutation: React.FC = () => {
     onMutate: (variables) => {
       return "on Mutate";
     },
-
     onSuccess: (data, variables, context) => {
       queryClient.setQueryData(["posts"], (oldData) => {
         if (Array.isArray(oldData)) return [...oldData, data];
         return [data];
       });
-      //   queryClient.invalidateQueries(["posts"]);
+      queryClient.invalidateQueries(["posts"]);
       console.log(context, data, variables);
-    },
-    onError: (error, variables, context) => {
-      // Handle error if needed
-    },
-    onSettled: (data, error, variables, context) => {
-      queryClient.refetchQueries(["posts"]);
     },
   });
 

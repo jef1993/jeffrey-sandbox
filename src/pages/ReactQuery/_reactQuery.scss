@@ -33,6 +33,9 @@
 }
 
 .rq-basic {
+  &--queries {
+    margin-top: 3rem;
+  }
   &__data-ctn {
     display: flex;
     gap: 2rem;
@@ -73,6 +76,42 @@
 
     & > p {
       display: flex;
+      gap: 2rem;
+    }
+  }
+}
+
+.infinity {
+  margin-top: 3rem;
+  width: 100%;
+
+  & .data-ctn__row {
+    width: 50rem;
+  }
+
+  &__list {
+    display: flex;
+    gap: 5rem;
+  }
+
+  &__ctn {
+    height: 70rem;
+    width: 55rem;
+    // width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: auto;
+  }
+
+  &__simplebar {
+    height: 70rem;
+    width: 55rem;
+
+    & .simplebar-content {
+      width: 55rem;
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
     }
   }
