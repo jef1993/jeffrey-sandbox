@@ -1,0 +1,22 @@
+@use "../../sass/abstracts" as *;
+
+.in-view {
+  &__colors {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 3rem 0;
+  }
+
+  &__color {
+    color: white;
+    text-align: center;
+    font-size: 12rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3.6rem;
+    border: 0.4rem solid var(--color-bg);
+    outline: 0.4rem solid var(--color-border);
+    border-radius: 1.6rem;
+  }
+}

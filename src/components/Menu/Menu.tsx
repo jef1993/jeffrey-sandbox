@@ -14,6 +14,8 @@ const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
     "notiflix",
     "scrollbar",
     "react query",
+    "in view",
+    "parallax",
   ];
 
   const menuStyle = {

@@ -635,6 +635,57 @@
   gap: 2rem;
 }
 
+.in-view__colors {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3rem 0;
+}
+.in-view__color {
+  color: white;
+  text-align: center;
+  font-size: 12rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3.6rem;
+  border: 0.4rem solid var(--color-bg);
+  outline: 0.4rem solid var(--color-border);
+  border-radius: 1.6rem;
+}
+
+.parallax__fixed {
+  position: fixed;
+  z-index: 99;
+  right: 20px;
+  font-size: 100px;
+  color: green;
+}
+.parallax__colors {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3rem 0;
+}
+.parallax__color {
+  color: white;
+  text-align: center;
+  font-size: 16rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 50rem;
+  border: 0.4rem solid var(--color-bg);
+  outline: 0.4rem solid var(--color-border);
+  position: relative;
+  border-radius: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parallax__color span {
+  z-index: 2;
+  color: azure;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;

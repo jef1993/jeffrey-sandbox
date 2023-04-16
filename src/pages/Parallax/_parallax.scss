@@ -1,0 +1,38 @@
+@use "../../sass/abstracts" as *;
+
+.parallax {
+  &__fixed {
+    position: fixed;
+    z-index: 99;
+    right: 20px;
+    font-size: 100px;
+    color: green;
+  }
+  &__colors {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 3rem 0;
+  }
+
+  &__color {
+    color: white;
+    text-align: center;
+    font-size: 16rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 50rem;
+    border: 0.4rem solid var(--color-bg);
+    outline: 0.4rem solid var(--color-border);
+    position: relative;
+    border-radius: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      z-index: 2;
+      color: azure;
+    }
+  }
+}

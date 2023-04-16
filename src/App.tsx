@@ -1,6 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, useScroll, motion, useSpring } from "framer-motion";
+import {
+  AnimatePresence,
+  useScroll,
+  motion,
+  useSpring,
+  useTransform,
+  useMotionValueEvent,
+} from "framer-motion";
 
 import Header from "./layout/Header";
 import Menu from "./components/Menu/Menu";
@@ -13,6 +20,8 @@ import { Confirm } from "notiflix";
 import Notiflix from "./pages/Notiflix/Notiflix";
 import Scrollbar from "./pages/Scrollbar/Scrollbar";
 import ReactQuery from "./pages/ReactQuery/ReactQuery";
+import InView from "./pages/InView/InView";
+import Parallax from "./pages/Parallax/Parallax";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -20,12 +29,6 @@ function App() {
   const [isLeaving, setIsLeaving] = useState(false);
   const location = useLocation();
   const mainRef = useRef(null);
-  const { scrollYProgress } = useScroll({ container: mainRef });
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 200,
-    damping: 35,
-    restDelta: 0.001,
-  });
 
   useEffect(() => {
     Notify.init({
@@ -43,10 +46,6 @@ function App() {
       },
     });
   }, []);
-
-  // useEffect(() => {
-  //   console.log(scrollYProgress);
-  // }, [scrollYProgress]);
 
   const themeHandler = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -67,7 +66,6 @@ function App() {
       />
 
       <main className="main" ref={mainRef}>
-        <motion.div className="main__progress" style={{ scaleX }}></motion.div>
         <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <AnimatePresence mode="wait">
           <Routes key={location.pathname} location={location}>
@@ -77,6 +75,8 @@ function App() {
             <Route element={<Notiflix />} path="notiflix" />
             <Route element={<Scrollbar />} path="scrollbar" />
             <Route element={<ReactQuery />} path="react-query" />
+            <Route element={<InView />} path="in-view" />
+            <Route element={<Parallax />} path="parallax" />
           </Routes>
         </AnimatePresence>
       </main>
