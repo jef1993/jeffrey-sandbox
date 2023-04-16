@@ -39,14 +39,18 @@ const ParallexColor: React.FC<ParallexColorProps> = ({
     layoutEffect: false,
   });
   const parallaxStyle = useTransform(scrollYProgress, [0, 1], [0, 260]);
-  const rotate = useTransform(scrollYProgress, [0, 0.5], [0, 180], {
+  const rotate = useTransform(scrollYProgress, [0, 0.5], [0, 360], {
     clamp: false,
     // ease: cubicBezier(0.17, 0.67, 0.83, 0.67),
   });
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   if (name === "red") console.log(latest);
+  // });
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    // console.log("Page scroll: ", latest);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (name === "red") console.log(latest);
   });
+
   return (
     <motion.div
       key={name}
@@ -105,12 +109,16 @@ const ParallaxColors: React.FC = () => {
       transition={{ duration: 0.5 }}
       ref={contentRef}
     >
-      <div
+      <motion.div
         className="parallax__fixed"
-        style={{ fontSize: `calc(40px + ${sy * 40}px)` }}
+        style={{
+          fontSize: `calc(40px + ${sy * 40}px)`,
+          right: `min(calc(${sy * 90}% + 30px), 73vw)`,
+          transformOrigin: "left",
+        }}
       >
         Fixed text
-      </div>
+      </motion.div>
       <div className="parallax__colors">
         {colors.map(([name, hue]) => (
           <ParallexColor
