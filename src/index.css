@@ -686,6 +686,28 @@
   color: azure;
 }
 
+.svg {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(42rem, 1fr));
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  overflow-x: auto;
+  gap: 2rem;
+}
+.svg__ctn__box {
+  border-radius: 0.8rem;
+  border: 0.3rem solid var(--color-border);
+  height: 42rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.svg__ctn__name {
+  padding: 1rem;
+  text-align: center;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;

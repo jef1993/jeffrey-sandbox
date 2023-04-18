@@ -1,0 +1,44 @@
+Introduction to SVG
+
+Key concepts: Scalable Vector Graphics, XML-based language, vector graphics, differences between vector and raster graphics
+Resources:
+MDN Web Docs (https://developer.mozilla.org/en-US/docs/Web/SVG)
+W3Schools (https://www.w3schools.com/graphics/svg_intro.asp)
+Basic shapes and structure
+
+Key concepts: SVG coordinate system, basic shapes (rect, circle, ellipse, line, polyline, polygon), SVG elements and attributes, viewBox, and preserveAspectRatio
+Resources:
+SVG Essentials by Amelia Bellamy-Royds and J. David Eisenberg (https://www.oreilly.com/library/view/svg-essentials/9781491927929/)
+SVG tutorials on CSS-Tricks (https://css-tricks.com/svg-properties-and-css/)
+Paths, text, and styling
+
+Key concepts: SVG path element, path commands, SVG text element, text positioning, text styling, CSS for SVG, fill, stroke, and other visual properties
+Resources:
+Pocket Guide to Writing SVG by Joni Trythall (https://svgpocketguide.com/)
+SVG 2nd Edition by Amelia Bellamy-Royds, Kurt Cagle, and Dudley Storey (https://www.oreilly.com/library/view/svg-2nd-edition/9781491929480/)
+Transformations, animations, and interactions
+
+Key concepts: SVG transformations (translate, scale, rotate, skew), SMIL animations, CSS animations, JavaScript interactivity, and event handling
+Resources:
+The SVG Animation Book by CSS Animation Rocks (https://svganimationbook.com/)
+Interactive Data Visualization for the Web by Scott Murray (https://alignedleft.com/resources/scott-murray/)
+Advanced SVG techniques
+
+Key concepts: Clipping, masking, gradients, patterns, filters, and symbols
+Resources:
+SVG Artista (https://svg-artista.net/)
+Sara Soueidan's Blog (https://www.sarasoueidan.com/blog/)
+Optimization and best practices
+
+Key concepts: SVG optimization tools, accessibility, performance, and embedding techniques
+Resources:
+Peter Collingridge's SVG Editor (http://petercollingridge.appspot.com/svg-editor)
+SVGOMG by Jake Archibald (https://jakearchibald.github.io/svgomg/)
+Real-world projects and libraries
+
+Key concepts: Building complex SVG projects, integrating with web design and development frameworks, popular SVG libraries (e.g., D3.js, Snap.svg, and SVG.js)
+Resources:
+D3.js (https://d3js.org/)
+Snap.svg (http://snapsvg.io/)
+SVG.js (https://svgjs.com/)
+As you progress through these steps, remember to practice by creating small projects or contributing to open-source repositories, as hands-on experience is key to becoming a professional.

@@ -22,6 +22,7 @@ import Scrollbar from "./pages/Scrollbar/Scrollbar";
 import ReactQuery from "./pages/ReactQuery/ReactQuery";
 import InView from "./pages/InView/InView";
 import Parallax from "./pages/Parallax/Parallax";
+import SVG from "./pages/SVG/SVG";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -77,6 +78,7 @@ function App() {
             <Route element={<ReactQuery />} path="react-query" />
             <Route element={<InView />} path="in-view" />
             <Route element={<Parallax />} path="parallax" />
+            <Route element={<SVG />} path="svg" />
           </Routes>
         </AnimatePresence>
       </main>

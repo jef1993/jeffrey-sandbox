@@ -16,6 +16,7 @@ const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
     "react query",
     "in view",
     "parallax",
+    "SVG",
   ];
 
   const menuStyle = {
@@ -47,7 +48,7 @@ const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
           <li key={name} className="menu__item">
             <Link
               className="menu__link"
-              to={`/${i === 0 ? "" : name.replace(" ", "-")}`}
+              to={`/${i === 0 ? "" : name.replace(" ", "-").toLowerCase()}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {name}
