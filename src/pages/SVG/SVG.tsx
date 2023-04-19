@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { pageAnimate } from "../fmConfig";
 
 import Basic from "./Basic";
+import Path from "./Path";
+import Text from "./Text";
 
 interface SVGCtnProps {
   children?: React.ReactNode;
@@ -28,6 +30,8 @@ const SVG: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <Basic />
+      <Path />
+      <Text />
     </motion.div>
   );
 };

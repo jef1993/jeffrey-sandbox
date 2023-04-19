@@ -68,7 +68,6 @@ const Basic: React.FC = () => {
           />
         </svg>
       </SVGCtn>
-
       <SVGCtn name="Line Join">
         <svg viewBox="0 0 18 12">
           <path
@@ -88,15 +87,6 @@ const Basic: React.FC = () => {
             stroke="hsl(20, 95%, 50%)"
             fill="hsl(50, 90%, 60%)"
             strokeLinejoin="round"
-          />
-        </svg>
-      </SVGCtn>
-      <SVGCtn name="Path">
-        <svg width="400" height="400">
-          <path
-            d="M 10 10 L 100 10 C 150 100, 250 100, 300 10 Q 350 50, 390 10"
-            fill="none"
-            stroke="black"
           />
         </svg>
       </SVGCtn>
