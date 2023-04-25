@@ -750,6 +750,123 @@
   transform-origin: center;
 }
 
+.css-animation > circle {
+  animation: circle 2s infinite;
+}
+@keyframes circle {
+  0% {
+    fill: red;
+    stroke: yellow;
+    stroke-width: 10;
+    r: 50;
+    cx: 100;
+    stroke-dasharray: 0 600;
+  }
+  25% {
+    fill: blue;
+    stroke: yellowgreen;
+    stroke-width: 20;
+    r: 20;
+    cx: 80;
+    stroke-dasharray: 200 400;
+  }
+  50% {
+    fill: blueviolet;
+    stroke: orange;
+    stroke-width: 30;
+    r: 70;
+    cx: 110;
+    stroke-dasharray: 200 600;
+  }
+  100% {
+    fill: red;
+    stroke: yellow;
+    stroke-width: 10;
+    r: 50;
+    cx: 100;
+    stroke-dasharray: 0 600;
+  }
+}
+
+.css-stroke-rotate > rect {
+  animation: stroke-rotate 4s linear infinite;
+  filter: drop-shadow(0px 0px 4px #6eff35) drop-shadow(-2px -2px 8px rgba(53, 255, 211, 0.15)) drop-shadow(4px 4px 4px rgba(255, 53, 211, 0.25));
+}
+@keyframes stroke-rotate {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 15 100;
+  }
+  50% {
+    stroke-dashoffset: 230;
+    stroke-dasharray: 100 15;
+  }
+  100% {
+    stroke-dashoffset: 460;
+    stroke-dasharray: 15 100;
+  }
+}
+.css-stroke-rotate > use:first-of-type {
+  filter: drop-shadow(0 0 8px rgba(255, 244, 91, 0.25)) drop-shadow(0 0 4px rgba(247, 178, 89, 0.5)) drop-shadow(0 0 2px rgba(255, 220, 104, 0.8));
+  animation: glow-opacity 8s ease-in-out infinite;
+}
+@keyframes glow-opacity {
+  0% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  35% {
+    opacity: 1;
+  }
+  47% {
+    opacity: 0.6;
+  }
+  61% {
+    opacity: 0.9;
+  }
+  73% {
+    opacity: 0.4;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes glow-opacity-2 {
+  0% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  66% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.css-stroke-rotate > use:nth-of-type(2) {
+  filter: drop-shadow(0px 0px 4px rgba(248, 207, 117, 0.5)) drop-shadow(-2px -2px 6px rgba(104, 139, 255, 0.1)) drop-shadow(3px 3px 3px rgba(255, 104, 78, 0.2));
+  animation: glow-opacity-2 1.4s ease-in infinite;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;
