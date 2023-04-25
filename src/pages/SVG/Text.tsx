@@ -36,9 +36,6 @@ const Text: React.FC = () => {
           <text x={0} y={12} dx={0} dy={200} textAnchor="middle">
             start
           </text>
-          <text x={0} y={12} dx={0} dy={200} textAnchor="middle">
-            start
-          </text>
         </svg>
       </SVGCtn>
       <SVGCtn name="Text Path">

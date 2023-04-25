@@ -494,6 +494,45 @@
   text-transform: capitalize;
 }
 
+.controls {
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  border: 0.1rem solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.controls__title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+.controls__ctn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.controls__reset-all {
+  margin-top: 1.2rem;
+  padding: 0.6rem;
+  font-weight: 500;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+}
+.controller__label {
+  width: 5rem;
+  font-size: 1.4rem;
+}
+.controller__input {
+  padding: 0;
+  height: 2.4rem;
+}
+
 .inputs {
   display: flex;
   gap: 2rem;
@@ -706,6 +745,9 @@
 .svg__ctn__name {
   padding: 1rem;
   text-align: center;
+}
+.svg__pink-box {
+  transform-origin: center;
 }
 
 .home-boxes {

@@ -4,6 +4,9 @@ import { pageAnimate } from "../fmConfig";
 import Basic from "./Basic";
 import Path from "./Path";
 import Text from "./Text";
+import Viewbox from "./Viewbox";
+import Transform from "./Transform";
+import Use from "./Use";
 
 interface SVGCtnProps {
   children?: React.ReactNode;
@@ -32,6 +35,10 @@ const SVG: React.FC = () => {
       <Basic />
       <Path />
       <Text />
+      <Viewbox />
+
+      <Use />
+      <Transform />
     </motion.div>
   );
 };
