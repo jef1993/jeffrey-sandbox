@@ -23,6 +23,7 @@ import ReactQuery from "./pages/ReactQuery/ReactQuery";
 import InView from "./pages/InView/InView";
 import Parallax from "./pages/Parallax/Parallax";
 import SVG from "./pages/SVG/SVG";
+import Grid from "./pages/Grid/Grid";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -79,6 +80,7 @@ function App() {
             <Route element={<InView />} path="in-view" />
             <Route element={<Parallax />} path="parallax" />
             <Route element={<SVG />} path="svg" />
+            <Route element={<Grid />} path="grid" />
           </Routes>
         </AnimatePresence>
       </main>

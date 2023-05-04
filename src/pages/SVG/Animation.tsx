@@ -117,6 +117,16 @@ const Animation: React.FC = () => {
           </text>
         </svg>
       </SVGCtn>
+      <SVGCtn name="Animated Path">
+        <svg width="400" height="400" viewBox="0 0 100 100">
+          <path
+            d="M 3 3L 97 3M 3 97L 97 97M 3 3"
+            strokeWidth={6}
+            stroke="red"
+            strokeLinecap="round"
+          />
+        </svg>
+      </SVGCtn>
     </>
   );
 };

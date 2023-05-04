@@ -8,6 +8,7 @@ import Viewbox from "./Viewbox";
 import Transform from "./Transform";
 import Use from "./Use";
 import Animation from "./Animation";
+import Filters from "./Filters";
 
 interface SVGCtnProps {
   children?: React.ReactNode;
@@ -37,10 +38,10 @@ const SVG: React.FC = () => {
       <Path />
       <Text />
       <Viewbox />
-
       <Use />
       <Transform />
       <Animation />
+      <Filters />
     </motion.div>
   );
 };

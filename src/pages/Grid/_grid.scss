@@ -1,0 +1,48 @@
+@use "../../sass/abstracts/" as *;
+
+.grid {
+}
+
+.expand-box {
+  display: grid;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  &--active {
+  }
+
+  &__box-wrapper {
+    overflow: hidden;
+    filter: grayscale(40%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__box {
+    border-radius: 1rem;
+    font-size: 6rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    position: relative;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+
+    & > span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.1s ease;
+
+      &[aria-hidden="true"] {
+        opacity: 0;
+      }
+    }
+  }
+}

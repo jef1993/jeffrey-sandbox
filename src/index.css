@@ -867,6 +867,42 @@
   animation: glow-opacity-2 1.4s ease-in infinite;
 }
 
+.expand-box {
+  display: grid;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.expand-box__box-wrapper {
+  overflow: hidden;
+  filter: grayscale(40%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expand-box__box {
+  border-radius: 1rem;
+  font-size: 6rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
+  position: relative;
+}
+.expand-box__box:hover {
+  filter: grayscale(0%);
+}
+.expand-box__box > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+}
+.expand-box__box > span[aria-hidden=true] {
+  opacity: 0;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;
