@@ -18,6 +18,7 @@ const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
     "parallax",
     "SVG",
     "grid",
+    "yup hook-form",
   ];
 
   const menuStyle = {

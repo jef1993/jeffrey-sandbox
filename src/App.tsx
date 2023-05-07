@@ -24,6 +24,7 @@ import InView from "./pages/InView/InView";
 import Parallax from "./pages/Parallax/Parallax";
 import SVG from "./pages/SVG/SVG";
 import Grid from "./pages/Grid/Grid";
+import YupHookForm from "./pages/YupHookForm/YupHookForm";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -81,6 +82,7 @@ function App() {
             <Route element={<Parallax />} path="parallax" />
             <Route element={<SVG />} path="svg" />
             <Route element={<Grid />} path="grid" />
+            <Route element={<YupHookForm />} path="yup-hook-form" />
           </Routes>
         </AnimatePresence>
       </main>

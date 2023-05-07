@@ -1,0 +1,8 @@
+@use "../../sass/abstracts/" as *;
+
+.yhf {
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

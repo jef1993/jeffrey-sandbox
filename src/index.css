@@ -903,6 +903,11 @@
   opacity: 0;
 }
 
+.yhf__form {
+  display: flex;
+  flex-direction: column;
+}
+
 .home-boxes {
   height: 200px;
   width: 50%;
