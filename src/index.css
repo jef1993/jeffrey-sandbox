@@ -906,6 +906,30 @@
 .yhf__form {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.input2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+}
+.input2__label {
+  margin-bottom: 0.6rem;
+}
+.input2__error {
+  text-align: right;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  color: hsl(0deg, 60%, 60%);
+}
+.input2__input {
+  grid-column: 1/-1;
+}
+.input2__input[aria-invalid=true] {
+  border-color: hsl(0deg, 60%, 60%);
+  border-width: 0.16rem;
 }
 
 .home-boxes {

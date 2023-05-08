@@ -1,0 +1,28 @@
+@use "../../../sass/abstracts/" as *;
+
+.input2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+
+  &__label {
+    margin-bottom: 0.6rem;
+  }
+
+  &__error {
+    text-align: right;
+    margin-bottom: 0.6rem;
+    font-size: 1.4rem;
+    color: hsl(0, 60%, 60%);
+  }
+
+  &__input {
+    grid-column: 1/-1;
+
+    &[aria-invalid="true"] {
+      border-color: hsl(0, 60%, 60%);
+      border-width: 0.16rem;
+    }
+  }
+}

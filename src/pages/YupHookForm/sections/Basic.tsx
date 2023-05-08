@@ -1,19 +1,22 @@
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import Section from "../../../components/Section/Section";
 import Input2 from "../components/Input2";
-import inputsSchema from "../components/InputsSchema";
+import { inputSchemas } from "../components/InputConfigs";
 
 const schema = yup.object({
-  fullName: inputsSchema.fullName,
-  age: inputsSchema.age,
+  fullName: inputSchemas.fullName.required(),
+  password: inputSchemas.password.required(),
+  confirmPassword: inputSchemas.confirmPassword,
 });
 
 export type FormData = yup.InferType<typeof schema>;
 
 const Basic = () => {
+  const [defaultName, setDefaultName] = useState("");
   const myForm = useForm<FormData>({
     resolver: yupResolver(schema),
   });
@@ -25,25 +28,38 @@ const Basic = () => {
   return (
     <Section title="hook form Basic">
       <form className="yhf__form" onSubmit={myForm.handleSubmit(submitHandler)}>
-        <Input2 label="fullName" form={myForm} fieldName="fullName" />
-        <Input2 label="age" form={myForm} fieldName="age" />
+        <Input2
+          label="fullName"
+          form={myForm}
+          fieldName="fullName"
+          fieldType="fullName"
+          defaultValue={defaultName}
+        />
+        <Input2
+          label="password"
+          form={myForm}
+          fieldName="password"
+          fieldType="password"
+        />
+        <Input2
+          label="confirm password"
+          form={myForm}
+          fieldName="confirmPassword"
+          fieldType="confirmPassword"
+        />
         <button>Submit</button>
+        <button type="button" onClick={setDefaultName.bind(null, "")}>
+          Remove Default Name
+        </button>
+        <button
+          type="button"
+          onClick={setDefaultName.bind(null, "Jeffrey Leung")}
+        >
+          Set Name: Jeffrey Leung
+        </button>
       </form>
     </Section>
   );
 };
 
 export default Basic;
-
-// function debounce(func: (...args: any[]) => void, wait: number) {
-//   let timeout: ReturnType<typeof setTimeout> | null;
-//   return function (...args: any[]) {
-//     const later = () => {
-//       timeout = null;
-//       func(...args);
-//     };
-
-//     if (timeout) clearTimeout(timeout);
-//     timeout = setTimeout(later, wait);
-//   };
-// }
