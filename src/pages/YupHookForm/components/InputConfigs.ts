@@ -88,7 +88,7 @@ const inputConfigs: InputConfigurations = {
     inputProps: {
       type: "number",
       autoComplete: "off",
-      placeholder: "Confirm your password...",
+      placeholder: "Enter Your age...",
     },
   },
 };

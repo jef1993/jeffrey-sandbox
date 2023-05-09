@@ -7,7 +7,7 @@ import axios, { AxiosResponse, AxiosRequestConfig, AxiosError } from "axios";
 import { QueryFunctionContext } from "@tanstack/react-query";
 import DataCtn from "../../components/container/DataCtn/DataCtn";
 
-const fetchData = async (config: AxiosRequestConfig) => {
+export const fetchData = async (config: AxiosRequestConfig) => {
   const response: AxiosResponse = await axios(config);
   return response.data;
 };
