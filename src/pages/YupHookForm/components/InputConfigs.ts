@@ -20,6 +20,7 @@ const inputConfigs: InputConfigurations = {
   fullName: {
     yup: yup
       .string()
+      .trim()
       .matches(/^([a-z\s\-']+\s+[a-z\s\-']+)*$/i, "Invalid Name"),
     inputProps: {
       type: "text",

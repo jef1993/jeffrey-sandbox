@@ -55,7 +55,7 @@ const Input2: React.FC<Input2Props> = ({
         defaultValue={defaultValue}
         {...register(fieldName)}
         onBlur={(e) => {
-          e.target.value = e.target.value.trim();
+          e.target.value = e.target.value.trim().replace(/\s{2,}/, " ");
         }}
         onFocus={focusHandler}
         id={inputId}
