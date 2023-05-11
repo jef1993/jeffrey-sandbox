@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { pageAnimate } from "../fmConfig";
 import Section from "../../components/Section/Section";
 import ExpandBox from "./ExpandBox";
+import AutoHeight from "./AutoHeight";
 
 const Grid: React.FC = () => {
   return (
@@ -16,6 +17,9 @@ const Grid: React.FC = () => {
     >
       <Section title="Expand On Click">
         <ExpandBox cols={8} rows={3} />
+      </Section>
+      <Section title="Auto Height">
+        <AutoHeight />
       </Section>
     </motion.div>
   );
