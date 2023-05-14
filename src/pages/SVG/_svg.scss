@@ -165,3 +165,47 @@
     }
   }
 }
+
+.path-animate {
+  // stroke-dasharray: 00 9999;
+  // stroke-dashoffset: 5;
+  // animation: animate-path 2.3s forwards infinite;
+
+  // @keyframes animate-path {
+  //   0% {
+  //   }
+  // }
+}
+
+.basic-lighting {
+  &__svg {
+    margin-bottom: 2rem;
+  }
+}
+
+.universe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+
+  & > svg {
+    grid-row: 1/-1;
+  }
+}
+
+.loader {
+  padding: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  filter: blur(20px) contrast(50);
+}
+
+.particle {
+  border-radius: 50%;
+  background-color: yellow;
+  height: 20rem;
+  aspect-ratio: 1/1;
+}

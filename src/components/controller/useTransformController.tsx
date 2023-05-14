@@ -77,6 +77,7 @@ const useTransformController = (height: number, width: number) => {
                 innerKey as keyof (typeof transformControlsMap)[typeof typedKey];
               return (
                 <Controller
+                  key={innerKey}
                   label={innerKey}
                   value={transform[typedKey][typedInnerKey]}
                   onChange={(e) => {

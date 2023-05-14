@@ -10,7 +10,7 @@ const Basic: React.FC = () => {
             cy="200" // The y-coordinate of the circle's center.
             r="100" // The radius of the circle.
             stroke="green" // The color used for the circle's outline.
-            stroke-width="4" // The width of the circle's outline.
+            strokeWidth="4" // The width of the circle's outline.
             fill="yellow" // The radius of the circle.
             strokeLinejoin="bevel"
             opacity={0.5} // The opacity of the circle
@@ -74,7 +74,7 @@ const Basic: React.FC = () => {
             d="M7,5 a2,2 0,0,0 2,-3 a3,3 0 0 1 2,3.5"
             stroke="black"
             fill="none"
-            stroke-linejoin="miter" //  The shape used to join outline segments ('miter', 'round', 'bevel').
+            strokeLinejoin="miter" //  The shape used to join outline segments ('miter', 'round', 'bevel').
             strokeMiterlimit={44}
           />
         </svg>

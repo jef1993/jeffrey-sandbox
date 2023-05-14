@@ -38,6 +38,7 @@ const ParallexColor: React.FC<ParallexColorProps> = ({
     container: parentRef,
     layoutEffect: false,
   });
+
   const parallaxStyle = useTransform(scrollYProgress, [0, 1], [0, 260]);
   const rotate = useTransform(scrollYProgress, [0, 0.5], [0, 360], {
     clamp: false,
@@ -47,9 +48,9 @@ const ParallexColor: React.FC<ParallexColorProps> = ({
   //   if (name === "red") console.log(latest);
   // });
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (name === "red") console.log(latest);
-  });
+  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  //   if (name === "red") console.log(latest);
+  // });
 
   return (
     <motion.div
@@ -76,9 +77,11 @@ const ParallexColor: React.FC<ParallexColorProps> = ({
 };
 
 const ParallaxColors: React.FC = () => {
-  const contentRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const ctnRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress, scrollY } = useScroll({ container: contentRef });
   const [sy, setsy] = useState(0);
+  const [pageHeight, setPageHeight] = useState(0);
   const colors: [string, number][] = [
     ["red", 0],
     ["orange", 30],
@@ -95,10 +98,24 @@ const ParallaxColors: React.FC = () => {
     ["scarlet", 348],
   ];
 
+  const jumps = [0, 25, 50, 75, 100];
+
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setsy(latest);
     // console.log("Page scroll: ", latest);
   });
+
+  useEffect(() => {
+    console.log(ctnRef.current);
+    if (ctnRef?.current && contentRef.current)
+      setTimeout(() => {
+        const ctnHeight = ctnRef?.current?.getBoundingClientRect().height ?? 0;
+        const contentHeight =
+          contentRef?.current?.getBoundingClientRect().height ?? 0;
+        setPageHeight(ctnHeight - contentHeight);
+      }, 500);
+  }, [ctnRef.current, contentRef.current]);
+
   return (
     <motion.div
       className="main__content parallax"
@@ -109,25 +126,47 @@ const ParallaxColors: React.FC = () => {
       transition={{ duration: 0.5 }}
       ref={contentRef}
     >
-      <motion.div
-        className="parallax__fixed"
-        style={{
-          fontSize: `calc(40px + ${sy * 40}px)`,
-          right: `min(calc(${sy * 90}% + 30px), 73vw)`,
-          transformOrigin: "left",
-        }}
-      >
-        Fixed text
-      </motion.div>
-      <div className="parallax__colors">
-        {colors.map(([name, hue]) => (
-          <ParallexColor
-            key={name}
-            hue={hue}
-            name={name}
-            parentRef={contentRef}
-          />
-        ))}
+      <div className="parallex__ctn" ref={ctnRef}>
+        <div className="parallax__cover">
+          {(sy * 100).toFixed(0)}{" "}
+          <div>
+            {" "}
+            {jumps.map((value) => (
+              <button
+                key={value}
+                className="parallax__jump"
+                onClick={() => {
+                  if (contentRef.current)
+                    contentRef?.current?.scrollTo({
+                      top: (pageHeight * value) / 100,
+                    });
+                }}
+              >
+                Jump to {value}%
+              </button>
+            ))}
+          </div>
+        </div>
+        <motion.div
+          className="parallax__fixed"
+          style={{
+            fontSize: `calc(40px + ${sy * 40}px)`,
+            right: `min(calc(${sy * 90}% + 30px), 73vw)`,
+            transformOrigin: "left",
+          }}
+        >
+          Fixed text
+        </motion.div>
+        <div className="parallax__colors">
+          {colors.map(([name, hue]) => (
+            <ParallexColor
+              key={name}
+              hue={hue}
+              name={name}
+              parentRef={contentRef}
+            />
+          ))}
+        </div>
       </div>
     </motion.div>
   );

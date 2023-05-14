@@ -3,7 +3,7 @@
 .parallax {
   &__fixed {
     position: fixed;
-    z-index: 99;
+    z-index: 3;
     right: 20px;
     font-size: 100px;
     color: green;
@@ -34,5 +34,29 @@
       z-index: 2;
       color: azure;
     }
+  }
+
+  &__cover {
+    position: sticky;
+    top: 0;
+
+    background-color: var(--color-bg);
+    border: 0.2rem solid var(--color-border);
+    padding: 1.2rem;
+    font-size: 7.2rem;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__jump {
+    font-size: 2rem;
+    padding: 2rem;
   }
 }

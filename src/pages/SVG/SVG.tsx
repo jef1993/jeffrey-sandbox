@@ -9,6 +9,7 @@ import Transform from "./Transform";
 import Use from "./Use";
 import Animation from "./Animation";
 import Filters from "./Filters";
+import Gradients from "./Gradients";
 
 interface SVGCtnProps {
   children?: React.ReactNode;
@@ -41,6 +42,7 @@ const SVG: React.FC = () => {
       <Use />
       <Transform />
       <Animation />
+      <Gradients />
       <Filters />
     </motion.div>
   );

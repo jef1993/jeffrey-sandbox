@@ -56,7 +56,7 @@ const Transform: React.FC = () => {
           >
             <circle cx="0" cy="0" r="30" />
             <rect x="50" y="0" width="50" height="50" />
-            <text x="110" y="30" font-family="Arial" font-size="24">
+            <text x="110" y="30" fontFamily="Arial" fontSize="24">
               Group
             </text>
           </g>

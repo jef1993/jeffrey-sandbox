@@ -58,6 +58,7 @@ const AutoHeight: React.FC = () => {
             transition={{ type: "tween", duration: 0.5 }}
             animate={{
               height: isExpanded ? height : 0,
+              paddingTop: isExpanded ? "1.2rem" : "0rem",
             }}
             className="auto-height__content"
           >

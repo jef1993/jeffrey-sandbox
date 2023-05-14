@@ -1,4 +1,7 @@
 import { SVGCtn } from "./SVG";
+import { motion } from "framer-motion";
+import LinearGradient from "./gradients/gradients";
+import Controller from "../../components/controller/Controller";
 
 const Animation: React.FC = () => {
   const circumference = (r: number) => {
@@ -108,8 +111,8 @@ const Animation: React.FC = () => {
           <text
             x="20"
             y="50"
-            font-size="40"
-            font-family="Arial"
+            fontSize="40"
+            fontFamily="Arial"
             fill="white"
             filter="url(#inset-shadow)"
           >
@@ -119,11 +122,22 @@ const Animation: React.FC = () => {
       </SVGCtn>
       <SVGCtn name="Animated Path">
         <svg width="400" height="400" viewBox="0 0 100 100">
-          <path
-            d="M 3 3L 97 3M 3 97L 97 97M 3 3"
+          <defs>
+            <LinearGradient />
+          </defs>
+          <motion.path
+            className="path-animate"
+            d="M 10 60L 30 80L 90 20"
             strokeWidth={6}
-            stroke="red"
+            fill="none"
+            stroke="url(#linear-gradient)"
+            x={20}
             strokeLinecap="round"
+            strokeLinejoin="round"
+            animate={{
+              pathLength: [1, 0, 1, 0, 1],
+            }}
+            transition={{ repeat: Infinity, repeatDelay: 1, duration: 1 }}
           />
         </svg>
       </SVGCtn>

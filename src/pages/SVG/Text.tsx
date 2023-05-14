@@ -48,7 +48,7 @@ const Text: React.FC = () => {
             strokeWidth={5}
             strokeLinecap="round"
           />
-          <text font-size="24" dy={-10} fontWeight={700}>
+          <text fontSize="24" dy={-10} fontWeight={700}>
             <textPath href="#textPathExample">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </textPath>

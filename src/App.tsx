@@ -32,6 +32,7 @@ function App() {
   const [isLeaving, setIsLeaving] = useState(false);
   const location = useLocation();
   const mainRef = useRef(null);
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     Notify.init({
