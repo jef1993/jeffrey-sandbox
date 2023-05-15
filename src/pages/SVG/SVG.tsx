@@ -10,6 +10,7 @@ import Use from "./Use";
 import Animation from "./Animation";
 import Filters from "./Filters";
 import Gradients from "./Gradients";
+import Mask from "./Mask";
 
 interface SVGCtnProps {
   children?: React.ReactNode;
@@ -44,6 +45,7 @@ const SVG: React.FC = () => {
       <Animation />
       <Gradients />
       <Filters />
+      <Mask />
     </motion.div>
   );
 };
