@@ -22,25 +22,29 @@ const TabSelect: React.FC = () => {
     }, 500);
   }, []);
 
-  console.log(dimensions[0]?.width, dimensions[1]?.width);
+  console.log(dimensions[0]?.x, dimensions[1]?.x);
 
   return (
     <Section title="Tab Select">
       <div className={`tab-select${selectedTab === "Option 1" ? " tall" : ""}`}>
         <nav className="tab-select__nav">
-          <motion.ul className="tab-select__list">
+          <motion.ul className="tab-select__list" layoutRoot>
             <motion.div
               className="tab-select__track"
-              data-position={selectedTab === tabs[0] ? "left" : "right"}
+              // data-position={selectedTab === tabs[0] ? "left" : "right"}
             >
               <motion.div
                 className="tab-select__track__thumb"
-                layout
+                // layout
                 animate={{
                   width:
-                    selectedTab === "Option 1"
-                      ? dimensions[0]?.width - 4
-                      : dimensions[1]?.width - 4,
+                    selectedTab === tabs[0]
+                      ? dimensions[0]?.width - 4 || ""
+                      : dimensions[1]?.width - 4 || "",
+                  x:
+                    selectedTab === tabs[0]
+                      ? 0
+                      : dimensions[1]?.x - dimensions[0]?.x,
                 }}
               ></motion.div>
             </motion.div>
@@ -55,7 +59,7 @@ const TabSelect: React.FC = () => {
                 onClick={setSelectedTab.bind(null, tab)}
               >
                 {tab}
-                {/* {tab === selectedTab ? (
+                {tab === selectedTab ? (
                   <motion.div
                     className="tab-select__thumb"
                     layoutScroll={false}
@@ -63,7 +67,7 @@ const TabSelect: React.FC = () => {
                   >
                     {tab}
                   </motion.div>
-                ) : null} */}
+                ) : null}
               </li>
             ))}
           </motion.ul>

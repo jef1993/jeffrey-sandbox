@@ -82,6 +82,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
 
     &[data-position="right"] {
       justify-content: flex-end;
@@ -91,7 +92,6 @@
       background-color: red;
       border-radius: 0.6rem;
       height: 100%;
-      width: 20rem;
     }
   }
 
@@ -125,6 +125,7 @@
     background-color: var(--color-text);
     border-radius: 0.8rem;
     z-index: -1;
+    opacity: 0.3;
   }
 
   &__ctn {
