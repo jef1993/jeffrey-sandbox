@@ -8,6 +8,7 @@ import {
   useTransform,
   useMotionValueEvent,
 } from "framer-motion";
+import Loadable from "react-loadable";
 
 import Header from "./layout/Header";
 import Menu from "./components/Menu/Menu";

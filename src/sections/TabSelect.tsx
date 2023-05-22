@@ -1,18 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Section from "../components/Section/Section";
-const tabs = ["Option 1", "Option 2", "Option Long"];
+const tabs = ["Option 1", "Option Long"];
 
 const TabSelect: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [dimensions, setDimensions] = useState<{ [key: string]: any }[]>([]);
+  const refs = useRef<(HTMLLIElement | null)[]>([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDimensions(
+        refs.current.map(
+          (element) =>
+            element?.getBoundingClientRect() || {
+              height: 0,
+              width: 0,
+            }
+        )
+      );
+    }, 500);
+  }, []);
+
+  console.log(dimensions[0]?.width, dimensions[1]?.width);
 
   return (
     <Section title="Tab Select">
-      <div className="tab-select">
+      <div className={`tab-select${selectedTab === "Option 1" ? " tall" : ""}`}>
         <nav className="tab-select__nav">
-          <ul className="tab-select__list">
-            {tabs.map((tab) => (
+          <motion.ul className="tab-select__list">
+            <motion.div
+              className="tab-select__track"
+              data-position={selectedTab === tabs[0] ? "left" : "right"}
+            >
+              <motion.div
+                className="tab-select__track__thumb"
+                layout
+                animate={{
+                  width:
+                    selectedTab === "Option 1"
+                      ? dimensions[0]?.width - 4
+                      : dimensions[1]?.width - 4,
+                }}
+              ></motion.div>
+            </motion.div>
+
+            {tabs.map((tab, i) => (
               <li
+                ref={(element) => (refs.current[i] = element)}
                 className="tab-select__item"
                 aria-selected={selectedTab === tab ? "true" : "false"}
                 role="tab"
@@ -20,19 +55,20 @@ const TabSelect: React.FC = () => {
                 onClick={setSelectedTab.bind(null, tab)}
               >
                 {tab}
-                {tab === selectedTab ? (
+                {/* {tab === selectedTab ? (
                   <motion.div
                     className="tab-select__thumb"
-                    layoutId="tab-select-thumb"
+                    layoutScroll={false}
+                    layoutId="asdasdasd"
                   >
                     {tab}
                   </motion.div>
-                ) : null}
+                ) : null} */}
               </li>
             ))}
-          </ul>
+          </motion.ul>
         </nav>
-        <div className="tab-select__ctn">
+        <div className={`tab-select__ctn`}>
           <AnimatePresence mode="wait">
             <motion.span
               key={selectedTab}

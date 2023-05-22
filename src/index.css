@@ -1114,6 +1114,29 @@
   border-radius: 1rem;
   overflow: hidden;
 }
+.tab-select.tall {
+  min-height: 40rem;
+}
+.tab-select__nav {
+  position: relative;
+}
+.tab-select__track {
+  position: absolute;
+  inset: 0.2rem;
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.tab-select__track[data-position=right] {
+  justify-content: flex-end;
+}
+.tab-select__track__thumb {
+  background-color: red;
+  border-radius: 0.6rem;
+  height: 100%;
+  width: 20rem;
+}
 .tab-select__list {
   display: flex;
   gap: 2rem;
@@ -1128,7 +1151,7 @@
   position: relative;
   z-index: 2;
 }
-.tab-select__item:nth-child(3) {
+.tab-select__item:nth-of-type(2) {
   flex: 2;
 }
 .tab-select__item[aria-selected=true] {

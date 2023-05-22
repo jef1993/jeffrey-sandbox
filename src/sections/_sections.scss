@@ -67,7 +67,32 @@
   border: 0.2rem solid var(--color-border);
   border-radius: 1rem;
   overflow: hidden;
+
+  &.tall {
+    min-height: 40rem;
+  }
   &__nav {
+    position: relative;
+  }
+
+  &__track {
+    position: absolute;
+    inset: 0.2rem;
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    &[data-position="right"] {
+      justify-content: flex-end;
+    }
+
+    &__thumb {
+      background-color: red;
+      border-radius: 0.6rem;
+      height: 100%;
+      width: 20rem;
+    }
   }
 
   &__list {
@@ -85,7 +110,7 @@
     position: relative;
     z-index: 2;
 
-    &:nth-child(3) {
+    &:nth-of-type(2) {
       flex: 2;
     }
 
