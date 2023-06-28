@@ -21,6 +21,7 @@ const Text: React.FC = () => {
             dy={80}
             textLength={400}
             lengthAdjust="spacingAndGlyphs"
+            fon
           >
             Text length and adjustment
           </text>

@@ -7,6 +7,7 @@ import Keyframes from "../../sections/Keyframes";
 import SwitchBoxes from "../../sections/SwitchBoxes";
 import BounceBall from "../../sections/BounceBall";
 import TabSelect from "../../sections/TabSelect";
+import FontAnimate from "../../sections/FontAnimate";
 
 const Home: React.FC = () => {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
       <SwitchBoxes />
       <BounceBall />
       <TabSelect />
+      <FontAnimate />
     </motion.div>
   );
 };

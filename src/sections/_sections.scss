@@ -137,3 +137,14 @@
     align-items: center;
   }
 }
+
+.font-animate {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16rem;
+  font-family: "snug-variable", sans-serif;
+  font-variation-settings: "wght" 100, "wdth" 1, "XHGT" 100;
+}
